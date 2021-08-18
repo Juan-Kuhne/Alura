@@ -27,8 +27,16 @@
 }
 
 .contatoCampo-checkbox {
-  display: none;
+  /* display: none; */
+  /* visibility: hidden; */
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
 }
+
+/* #receberEmail {
+  display: none;
+} */
 
 .contatoCampo-icone {
   position: absolute;
