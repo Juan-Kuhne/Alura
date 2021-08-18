@@ -19,7 +19,6 @@ body::-webkit-scrollbar-thumb {
 
 header {
 	background: #BBBBBB;
-	padding: 20px 0;
 }
 
 .caixa {
@@ -191,6 +190,7 @@ footer {
 
 .principal p {
 	margin: 0 0 1em;
+	font-size: 18px;
 }
 
 .principal strong {
@@ -213,7 +213,7 @@ footer {
 }
 
 .mapa-conteudo {
-	width: 940px;
+	width: 720px;
 	margin: 0 auto;
 }
 
@@ -241,6 +241,7 @@ footer {
 
 .itens {
 	line-height: 1.5em;
+	font-size: 18px;
 }
 
 .itens:first-child {
