@@ -269,6 +269,45 @@ footer {
 	margin: 3em auto;
 }
 
+@media screen and (max-width: 480px) {
+	.caixa, .principal, .conteudo-beneficios, .mapa-conteudo {
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+	}
+
+	p {
+		padding: 0 10px;
+		font-size: 18px;
+	}
+
+	.utensilios {
+		width: 110px;
+		margin: 0 5px;
+	}
+
+	.lista-beneficios {
+		width: 100%;
+		text-align: center;
+	}
+
+	.imgbeneficios {
+		width: 80%;
+		margin: 2em 0 0 10%;
+	}
+
+	.video {
+		width: auto;
+		margin: 4em 10%;
+	}
+}
+
 /*seleciona todas as tags p que são filhas deiretas de main*/
 /* main > p {
 	background: red;
