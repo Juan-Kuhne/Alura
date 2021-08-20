@@ -1,26 +1,7 @@
 console.log()
 
-class Cliente { //criação do molde do cliente
-    nome
-    cpf
-}
-
-class ContaCorrente { //criação do molda da conta
-    agencia
-    #saldo = 0
-
-    sacar(valor) {
-        if (this.#saldo >= valor) {
-            this.#saldo -= valor
-            return valor
-        }
-    }
-
-    depositar(valor) {
-        if (valor <= 0) return
-        this.#saldo += valor
-    }
-}
+import { Cliente } from "./Cliente.js"
+import { ContaCorrente } from "./ContaCorrente.js" //recomendado usar o caminho completo no from
 
 const cliente1 = new Cliente()
 cliente1.nome = 'Ricardo'
@@ -32,14 +13,17 @@ cliente2.cpf = 88822233309
 
 const contaRicardo = new ContaCorrente()
 contaRicardo.agencia = 1001
+contaRicardo.cliente = cliente1
+contaRicardo.depositar(500)
 
-contaRicardo.depositar(100)
-contaRicardo.depositar(100)
-contaRicardo.depositar(100)
+const contaAlice = new ContaCorrente()
+contaAlice.agencia = 102
+contaAlice.cliente = cliente2
 
-const valorSacado = contaRicardo.sacar(50)
-console.log(valorSacado)
+let valor = 200
+contaRicardo.transferir(valor)
 
 console.log(contaRicardo)
+console.log(contaAlice)
 
 console.log()
