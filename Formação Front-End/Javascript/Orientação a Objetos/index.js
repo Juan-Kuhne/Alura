@@ -1,29 +1,45 @@
-class Cliente {
+console.log()
+
+class Cliente { //criação do molde do cliente
     nome
     cpf
-    agencia
-    saldo
-    rg
 }
 
-class contaCorrente {
-    
+class ContaCorrente { //criação do molda da conta
+    agencia
+    #saldo = 0
+
+    sacar(valor) {
+        if (this.#saldo >= valor) {
+            this.#saldo -= valor
+            return valor
+        }
+    }
+
+    depositar(valor) {
+        if (valor <= 0) return
+        this.#saldo += valor
+    }
 }
 
 const cliente1 = new Cliente()
-const cliente2 = new Cliente()
-
 cliente1.nome = 'Ricardo'
 cliente1.cpf = 11122233309
-cliente1.agencia = 1001
-cliente1.saldo = 0
-cliente1.rg = 123456789
 
-
+const cliente2 = new Cliente()
 cliente2.nome = 'Alice'
 cliente2.cpf = 88822233309
-cliente2.agencia = 1001
-cliente2.saldo = 0
 
-console.log(cliente1)
-console.log(cliente2)
+const contaRicardo = new ContaCorrente()
+contaRicardo.agencia = 1001
+
+contaRicardo.depositar(100)
+contaRicardo.depositar(100)
+contaRicardo.depositar(100)
+
+const valorSacado = contaRicardo.sacar(50)
+console.log(valorSacado)
+
+console.log(contaRicardo)
+
+console.log()
