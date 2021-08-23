@@ -1,21 +1,21 @@
 import { Cliente } from "./Cliente.js"
 
-export class ContaCorrente { //criação do molda da conta
-    
-    static numDeContasC = 0
+export class Conta {
+    static numDeContas = 0
 
 //==================================================================
 
-    constructor(cliente, agencia) {
+    constructor(saldoInicial, cliente, agencia) {
         this._agencia = agencia
         this.cliente = cliente
-        this._saldo = 0
-        ContaCorrente.numDeContasC++
+        this._saldo = saldoInicial
+        Conta.numDeContas++
     }
 
 //==================================================================
 
     sacar(valor) {
+        taxa = 1.1 * valor
         if (this._saldo >= valor) {
             this._saldo -= valor
             return valor
