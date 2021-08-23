@@ -1,4 +1,4 @@
-import { Cliente } from "./Cliente.js"
+import { Cliente } from '../Cliente.js'
 
 export class Conta { //classe abstrata
     static numDeContas = 0
@@ -14,8 +14,6 @@ export class Conta { //classe abstrata
         this.cliente = cliente
         this._saldo = saldoInicial
         Conta.numDeContas++
-
-        
     }
 
 //==================================================================

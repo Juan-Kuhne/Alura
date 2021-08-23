@@ -1,20 +1,26 @@
 console.log()
 
-import { Cliente } from "./Cliente.js"
-import { ContaCorrente } from "./ContaCorrente.js" //recomendado usar o caminho completo no from
-import { ContaPoupanca } from "./ContaPoupanca.js"
-import { ContaSalario } from "./ContaSalario.js"
+import { Cliente } from "./Cliente.js"//recomendado usar o caminho completo no from
+// import { ContaCorrente } from "./Conta/ContaCorrente.js"
+// import { ContaPoupanca } from "./Conta/ContaPoupanca.js"
+// import { ContaSalario } from "./Conta/ContaSalario.js"
+import { Gerente } from "./Funcionário/Gerente.js"
+import { Diretor } from "./Funcionário/Diretor.js"
+import { SistemaAtuenticacao } from "./SistemaAutenticacao.js"
 
-const cliente1 = new Cliente('Ricardo', 11122233309)
+const diretor = new Diretor('Rodrigo', 10000, 12345678900)
+const gerente = new Gerente('Ricardo', 5000, 12378945601)
+const cliente = new Cliente('Lais', 78945612379, '456')
 
-const contaRicardo = new ContaCorrente(cliente1, 1001)
-const contapp = new ContaPoupanca(50, cliente1, contaRicardo.agencia)
-const contaS = new ContaSalario(cliente1)
-contaS.depositar(100)
-contaS.sacar(10)
+diretor.cadastrarSenha('123456')
+gerente.cadastrarSenha('123')
 
-console.log(contaRicardo)
-console.log(contapp)
-console.log(contaS)
+const gerenteLogado = SistemaAtuenticacao.login(gerente, '123')
+const diretorLogado = SistemaAtuenticacao.login(diretor, '123456')
+const clienteLogado = SistemaAtuenticacao.login(cliente, '456')
+
+console.log('Gerente:', gerenteLogado? '=online=' : '=offline=')
+console.log('Diretor:', diretorLogado? '=online=' : '=offline=')
+console.log('Cliente:', clienteLogado? '=online=' : '=offline=')
 
 console.log()
