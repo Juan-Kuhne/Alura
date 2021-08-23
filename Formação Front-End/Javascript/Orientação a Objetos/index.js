@@ -17,11 +17,11 @@ contaRicardo.cliente = cliente1
 contaRicardo.depositar(500)
 
 const contaAlice = new ContaCorrente()
-contaAlice.agencia = 102
 contaAlice.cliente = cliente2
+contaAlice.agencia = 102
 
 let valor = 200
-contaRicardo.transferir(valor)
+contaRicardo.transferir(valor, contaAlice)
 
 console.log(contaRicardo)
 console.log(contaAlice)
