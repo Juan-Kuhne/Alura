@@ -2,9 +2,21 @@ import { Cliente } from "./Cliente.js"
 
 export class ContaCorrente { //criação do molda da conta
     agencia
+    
+    static numDeContas = 0
 
     _cliente
     _saldo = 0
+
+//==================================================================
+
+    constructor(cliente, agencia) {
+        this.agencia = agencia
+        this.cliente = cliente
+        ContaCorrente.numDeContas++
+    }
+
+//==================================================================
 
     sacar(valor) {
         if (this._saldo >= valor) {
@@ -22,7 +34,8 @@ export class ContaCorrente { //criação do molda da conta
         const valorSacado = this.sacar(valor)
         conta.depositar(valorSacado)
     }
-    //==================================================================
+
+//==================================================================
 
     get cliente() {
         return this._cliente
