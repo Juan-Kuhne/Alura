@@ -14,7 +14,7 @@ export class ContaCorrente extends Conta { //criação do molda da conta
 //==================================================================
 
 sacar(valor) { //sobre-escrevendo o comportamento de sacar
-    let taxa = 1.1
+    const taxa = 1.1
     return this._sacar(valor, taxa)
 }
 
