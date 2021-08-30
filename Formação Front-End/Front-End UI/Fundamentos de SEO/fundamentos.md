@@ -112,4 +112,10 @@
 ### Avaliando a concorrência
 * Testar a concorrência é fundamental
 * Observar quem são os principais concorrentes
-* Fazer uma análise de como eles estão faendo SEO em seus sites
+* Fazer uma análise de como eles estão fazendo SEO em seus sites
+* Existem ferramentas gratuitas de diagnóstico que podem ser usadas para comparar a velocidade do site e avaliar autoridade e outras pontuações do seu site e do site de seu concorrente
+  * Plugin de SEO do Google Chrome
+  * Ubersuggest (Neil Patel)
+* Avaliar a autoridade da concorrência
+* Avaliar o tráfego orgânico
+  * Quantos sites apontam links para o concorrente?
