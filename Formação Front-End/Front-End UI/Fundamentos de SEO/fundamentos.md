@@ -119,3 +119,14 @@
 * Avaliar a autoridade da concorrência
 * Avaliar o tráfego orgânico
   * Quantos sites apontam links para o concorrente?
+
+## SEO On Page
+* Estrutura das páginas, códigos e conteúdo
+* Fatores On Page primordiais
+  * Palavras-chave mais relevantes presentes na Tag `<title>`
+  * Cada página deve possuir um título `<title>` próprio, relevante e diferente das outras páginas. **Proibido** títulos duplicados
+  * Ordem da palavra-chave no `<title>`. A palavra-chave deve estar no início
+  * Imagens com o atributo *alt* preenchidas e descrição correta da imagem
+  * Verificar se o conteúdo do site é duplicado. Evitar copiar conteúdo de outros sites. O conteúdo deve ser único
+  * Sem erros de ortografia e concordância no conteúdo
+  * Uso de linkagem interna entre as páginas e também posts do site, seguindo as recomendações do texto âncora
