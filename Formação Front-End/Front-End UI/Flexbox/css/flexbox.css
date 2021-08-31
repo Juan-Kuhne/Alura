@@ -2,7 +2,7 @@
 
 .cabecalhoPrincipal .container {
     display: flex; /*declara o flexbox (declarar na tag pai dos elementos que se quer alinhar)*/
-    align-items: center; /*configura o ainhamento vertical do flexbox*/
+    align-items: center; /*configura o ainhamento ao longo da direção do flexbox (flex-direction)*/
     justify-content: space-between; /*configura o tipo de espaçamento horizontal do flexbox*/ /*nesse caso distribui o espaço vazio entre os elementos do flexbox*/
 }
 
@@ -39,7 +39,11 @@
     justify-content: space-around; /*nesse caso distribui o espaço vazio em volta dos elementos do flexbox*/
     align-items: center;
     width: 70%;
-    margin-right: 5%;
+    /* margin-right: 5%; */
+}
+
+.rodapePrincipal-patrocinadores-list li{
+    width: 120px;
 }
 
 .rodapePrincipal-contatoForm {
@@ -48,6 +52,19 @@
 
 .rodapePrincipal-contatoForm-fieldset {
     display: flex;
+}
+
+/* parte mobile */
+@media screen and (max-width: 767px) {
+    .cabecalhoPrincipal .container {
+        flex-direction: column;
+        align-items: initial;
+        text-align: center;
+    }
+
+    .cabecalhoPrincipal-nav {
+        flex-direction: column;
+    }
 }
 
 /*
