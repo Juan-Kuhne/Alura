@@ -10,6 +10,17 @@
     display: flex;
 }
 
+.conteudoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conteudoPrincipal-cursos-link {
+    width: 23%;
+    margin: 1%;
+    margin-right: 10px;
+}
+
 .rodapePrincipal-navMap-list {
     display: flex;
     height: 250px;
