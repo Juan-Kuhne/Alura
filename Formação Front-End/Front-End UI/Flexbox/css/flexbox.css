@@ -3,10 +3,39 @@
 .cabecalhoPrincipal .container {
     display: flex; /*declara o flexbox (declarar na tag pai dos elementos que se quer alinhar)*/
     align-items: center; /*configura o ainhamento vertical do flexbox*/
-    justify-content: space-between; /*configura o tipo de espaçamento horizontal do flexbox*/
+    justify-content: space-between; /*configura o tipo de espaçamento horizontal do flexbox*/ /*nesse caso distribui o espaço vazio entre os elementos do flexbox*/
 }
 
 .cabecalhoPrincipal-nav {
+    display: flex;
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex;
+    height: 250px;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; faz a 'quebra de linha' para os elementos caberem no pai */
+    flex-flow: column wrap; /*resume as propriedades flex-direction e flex-wrap*/
+}
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    justify-content: space-around; /*nesse caso distribui o espaço vazio em volta dos elementos do flexbox*/
+    align-items: center;
+    width: 70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm {
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
     display: flex;
 }
 
@@ -34,4 +63,19 @@
   alinhar os elementos verticalmente de forma fácil.
   O display flex pode ser um pouco mais complicado de usar tendo em vista que existem diversas propriedades que vem junto da 
   especificação flexible box, todavia tudo isso foi feito para justamente melhorar nosso código.
+*/
+
+/*
+Qual o valor da propriedade justify-content para essas distribuições de espaço?
+
+Colocar todo espaço à esquerda, jogando o conteúdo para direita com justify-content: flex-end.
+
+Colocar todo espaço à direita, jogando o conteúdo para esquerda com justify-content: flex-start (que é o padrão).
+
+Colocar todo espaço à esquerda e à direita, jogando o conteúdo para o meio com justify-content: center.
+
+Colocar todo espaço entre os elementos como vimos antes usando justify-content: space-between.
+
+E uma possibilidade bem interessante também é colocar o espaço em volta dos elementos. Podemos usar o 
+justify-content: space-around para isso.
 */
