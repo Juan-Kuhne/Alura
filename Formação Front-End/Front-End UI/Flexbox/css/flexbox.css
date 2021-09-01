@@ -1,4 +1,5 @@
 /*Site para consulta de compatibilidade de tags com navegadores - Can I Use (http://caniuse.com/)*/
+/* Artigo para consulta de propriedades flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
 .cabecalhoPrincipal .container {
     display: flex; /*declara o flexbox (declarar na tag pai dos elementos que se quer alinhar)*/
@@ -19,6 +20,26 @@
     width: 23%;
     margin: 1%;
     margin-right: 10px;
+}
+
+.videoSobre .container {
+    display: flex;
+}
+
+.videoSobre-video {
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+
+.videoSobre-sobre {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+}
+
+.videoSobre-sobre-list {
+    flex-grow: 1;
 }
 
 .rodapePrincipal-navMap-list {
@@ -55,7 +76,7 @@
 }
 
 /* parte mobile */
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
     .cabecalhoPrincipal .container {
         flex-direction: column;
         align-items: initial;
@@ -64,6 +85,54 @@
 
     .cabecalhoPrincipal-nav {
         flex-direction: column;
+    }
+
+    .cabecalhoPrincipal-nav-link-app {
+        order: -1; /*propriedade felx item (0 por padrão)*/
+    }
+
+    .conteudoPrincipal-cursos {
+        flex-direction: column;
+    }
+
+    .conteudoPrincipal-cursos-link {
+        width: 96%;
+        margin: 10px auto;
+    }
+
+    .videoSobre .container {
+        flex-direction: column;
+    }
+
+    .videoSobre-video {
+        margin: 0 auto;
+    }
+
+    .rodapePrincipal-navMap-list {
+        height: auto;
+    }
+
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodapePrincipal-patrocinadores-list {
+        width: 100%;
+    }
+    
+    .rodapePrincipal-contatoForm {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodapePrincipal-contatoForm-legend {
+        width: 100%;
+    }
+
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
     }
 }
 
@@ -106,4 +175,23 @@ Colocar todo espaço entre os elementos como vimos antes usando justify-content:
 
 E uma possibilidade bem interessante também é colocar o espaço em volta dos elementos. Podemos usar o 
 justify-content: space-around para isso.
+*/
+
+/*
+Propriedades:
+    flex-container:
+        display: flex
+        flex-direction
+        justify-content
+        flex-wrap
+        flex-flow
+        align-items
+        align-content
+    flex item:
+        order
+        flex-grow
+        flex-shrink
+        flex-basis
+        flex
+        align-self
 */
