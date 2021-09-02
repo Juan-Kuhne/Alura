@@ -1,5 +1,5 @@
 .populares {
-    padding: 3rem 2rem;
+    padding: 3rem 0;
 }
 
 .populares__conteudo {
@@ -67,6 +67,7 @@
     border-bottom: 1px solid #dcdcdc;
     display: flex;
     justify-content: space-between;
+    margin-right: 1.1rem;
 }
 
 .populares__botao {
