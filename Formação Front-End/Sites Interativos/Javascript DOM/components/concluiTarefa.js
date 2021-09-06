@@ -1,5 +1,3 @@
-export default BotaoConclui
-
 const BotaoConclui = () => {
     const botaoConclui = document.createElement('button')
     
@@ -17,3 +15,5 @@ const concluirTarefa = (evento) => {
 
     tarefaCompleta.classList.toggle('done')
 }
+
+export default BotaoConclui

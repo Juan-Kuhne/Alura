@@ -1,5 +1,3 @@
-export default BotaoDeleta
-
 const BotaoDeleta = () => {
     const botaoDeleta = document.createElement('button')
 
@@ -16,3 +14,5 @@ const deletarTarefa = (evento) => {
 
     removerTarefa.remove()
 }
+
+export default BotaoDeleta
