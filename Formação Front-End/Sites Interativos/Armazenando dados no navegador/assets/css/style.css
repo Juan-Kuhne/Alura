@@ -131,6 +131,7 @@ body {
   outline: none;
   border-radius: 2px;
   cursor: pointer;
+  margin-left: 1rem;
 }
 
 .task.done .check-button {
@@ -155,7 +156,7 @@ body {
   margin: 0;
 }
 
-.content-data { 
+.content-data {
   color: #F6F1D1;
   display: flex;
   justify-content: flex-start;
