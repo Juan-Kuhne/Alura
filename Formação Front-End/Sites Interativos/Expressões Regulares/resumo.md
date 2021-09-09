@@ -28,3 +28,4 @@
   * \Babc\B (*Non Word Boundary*) => busca por sequências especificas dentro de palavras
   * `^abc` => procura sequências especificas no inicio da string
   * `abc$` => procura sequências especificas no final da string
+* *Grupos*
