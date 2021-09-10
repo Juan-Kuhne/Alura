@@ -2,7 +2,7 @@
 ---
 * Regex é uma linguagem para encontrar padrões de texto
 * Sendo uma linguagem independente, existem interpretadores para a maioria das plataformas de desenvolvimento
-* Classe de caracteres
+* *Classe de caracteres*
   * `\d` => qualquer digito (atalho para '[0-9]')
   * `\s` => atalho para `[ \t\r\n\f]`
   * `\w` => atalho para `[a-zA-Z0-9_]`
@@ -29,3 +29,9 @@
   * `^abc` => procura sequências especificas no inicio da string
   * `abc$` => procura sequências especificas no final da string
 * *Grupos*
+  * Seleção através de parnêtesis `()` do que será retornado da regex
+  * `(\w+)` => Seleção simples
+  * `(\w+)?` => Seleção opcional
+  * `(?:\w+)` => `?:` informa que não haverá retorno daquele grupo
+* *Backreferences*
+  * \1 => Procura pelo valor retornado no index especificado (index 0 é o match, a tartir dai são os retornos)
