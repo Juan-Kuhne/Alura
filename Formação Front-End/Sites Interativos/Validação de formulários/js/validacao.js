@@ -7,8 +7,19 @@ export function valida(input) {
 
     if(input.validity.valid) {
         input.parentElement.classList.remove('input-container--invalido')
+        input.parentElement.querySelector('.input-mensagem-erro').innerHTML = ''
     } else {
-        input.parentElement.classList.add('input-container--invalido')
+        if(tipoDeInput === 'dataNascimento'){
+            input.parentElement.classList.add('input-container--invalido')
+            if(input.validity.valueMissing === true){
+                input.parentElement.querySelector('.input-mensagem-erro').innerHTML = mensagensDeErro[tipoDeInput].valueMissing
+            } else {
+                input.parentElement.querySelector('.input-mensagem-erro').innerHTML = mostraMensagemDeErro(tipoDeInput, input)
+            }
+        } else {
+            input.parentElement.classList.add('input-container--invalido')
+            input.parentElement.querySelector('.input-mensagem-erro').innerHTML = mostraMensagemDeErro(tipoDeInput, input)
+        }
     }
 }
 
@@ -24,17 +35,35 @@ const mensagensDeErro = {
 
     senha: {
         valueMissing: 'O campo senha não pode estar vazio.',
-        patternMismatch: 'A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maipuscula, um número e não deve conter símbolos'
+        patternMismatch: 'A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos'
     },
 
     dataNascimento: {
-        valueMissing: 'O campo de data de nascimento não pode estar vazio.',
-        customError: 'Você deve ser maior que 18 anos para se cadastrar.'
+        customError: 'Você deve ser maior que 18 anos para se cadastrar.',
+        valueMissing: 'O campo de data de nascimento não pode estar vazio.'
     }
 }
 
 const validadores = {
     dataNascimento: input => validaDataNascimento(input)
+}
+
+const tiposDeErro = [
+    'valueMissing',
+    'typeMismatch',
+    'customError',
+    'patternMismatch'
+]
+
+function mostraMensagemDeErro(tipoDeInput, input) {
+    let mensagem = ''
+    tiposDeErro.forEach(erro => {
+        if(input.validity[erro]){
+            mensagem = mensagensDeErro[tipoDeInput][erro]
+        }
+    })
+
+    return mensagem
 }
 
 function validaDataNascimento(input) {
@@ -54,3 +83,6 @@ function maiorQue18(data) {
 
     return dataMais18 <= dataAtual
 }
+
+// var inputSenha = document.querySelector('#senha')
+// console.log(inputSenha.validity);
