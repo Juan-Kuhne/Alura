@@ -9,5 +9,3 @@ export class Negociacoes {
         return this.negociacoes;
     }
 }
-//private negociacoes: Negociacao[] = [] === private negociacoes: Array<Negociacao> = []
-//lista(): readonly Negociacao[] {} === lista(): ReadonlyArray<Negociacao> {
