@@ -1,0 +1,8 @@
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\bin\Debug\P10-CalculaPoupanca.exe.config
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\bin\Debug\P10-CalculaPoupanca.exe
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\bin\Debug\P10-CalculaPoupanca.pdb
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\obj\Debug\P10-CalculaPoupanca.csproj.AssemblyReference.cache
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\obj\Debug\P10-CalculaPoupanca.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\obj\Debug\P10-CalculaPoupanca.csproj.CoreCompileInputs.cache
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\obj\Debug\P10-CalculaPoupanca.exe
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P10-CalculaPoupanca\obj\Debug\P10-CalculaPoupanca.pdb
