@@ -1,0 +1,8 @@
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\bin\Debug\9-Escopo.exe.config
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\bin\Debug\9-Escopo.exe
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\bin\Debug\9-Escopo.pdb
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\obj\Debug\9-Escopo.csproj.AssemblyReference.cache
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\obj\Debug\9-Escopo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\obj\Debug\9-Escopo.csproj.CoreCompileInputs.cache
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\obj\Debug\9-Escopo.exe
+C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\9-Escopo\obj\Debug\9-Escopo.pdb
