@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import privado from "../../assets/images/privado.svg";
 import olho_icone from "../../assets/images/olho.svg";
 import dinheiro from "../../assets/images/dinheiro.svg";
-import { Box, Detalhe, Icone, Saldo } from "../UI";
+import { Botao, Box, Detalhe, Icone, Saldo } from "../UI";
 import styled from "styled-components";
 
 const IconeMargin = styled(Icone)`
@@ -32,12 +32,12 @@ const Conta = () => {
         ) : null}
       </div>
 
-      <button className="btn" onClick={toggleHandler}>
+      <Botao onClick={toggleHandler}>
         <IconeMargin
           src={toggleState ? privado : olho_icone}
           alt="Privacidade do Saldo"
         />
-      </button>
+      </Botao>
     </Box>
   );
 };

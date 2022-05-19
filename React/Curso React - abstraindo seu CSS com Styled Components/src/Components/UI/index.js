@@ -30,3 +30,16 @@ export const Detalhe = styled.span`
   color: #41d3be;
   font-size: 24px;
 `;
+
+export const Botao = styled.button`
+  margin: 15px auto 0px auto;
+  display: block;
+  border-radius: 20px;
+  background-color: #41d3be;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  cursor: pointer;
+`;
