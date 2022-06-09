@@ -9,7 +9,7 @@ class Formulario extends React.Component<{
 }> {
   state = {
     tarefa: "",
-    tempo: "00:00",
+    tempo: "01:00",
   };
 
   adicionarTarefa(e: React.FormEvent<HTMLFormElement>) {
@@ -18,7 +18,7 @@ class Formulario extends React.Component<{
       ...tarefasAntigas,
       { ...this.state, selecionado: false, completado: false, id: uuidv4() },
     ]);
-    this.setState({ tarefa: "", tempo: "00:00" });
+    this.setState({ tarefa: "", tempo: "0:00" });
   }
 
   render() {
