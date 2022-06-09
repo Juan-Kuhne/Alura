@@ -1,8 +1,0 @@
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\bin\Debug\P12-CalculandoInvestimentoLongoPrazo.exe.config
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\bin\Debug\P12-CalculandoInvestimentoLongoPrazo.exe
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\bin\Debug\P12-CalculandoInvestimentoLongoPrazo.pdb
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\obj\Debug\P12-CalculandoInvestimentoLongoPrazo.csproj.AssemblyReference.cache
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\obj\Debug\P12-CalculandoInvestimentoLongoPrazo.csproj.SuggestedBindingRedirects.cache
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\obj\Debug\P12-CalculandoInvestimentoLongoPrazo.csproj.CoreCompileInputs.cache
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\obj\Debug\P12-CalculandoInvestimentoLongoPrazo.exe
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\P12-CalculandoInvestimentoLongoPrazo\obj\Debug\P12-CalculandoInvestimentoLongoPrazo.pdb

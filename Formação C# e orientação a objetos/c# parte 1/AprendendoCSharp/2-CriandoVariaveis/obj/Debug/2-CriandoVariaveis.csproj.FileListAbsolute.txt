@@ -1,8 +1,0 @@
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\bin\Debug\2-CriandoVariaveis.exe.config
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\bin\Debug\2-CriandoVariaveis.exe
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\bin\Debug\2-CriandoVariaveis.pdb
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\obj\Debug\2-CriandoVariaveis.csproj.AssemblyReference.cache
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\obj\Debug\2-CriandoVariaveis.csproj.SuggestedBindingRedirects.cache
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\obj\Debug\2-CriandoVariaveis.csproj.CoreCompileInputs.cache
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\obj\Debug\2-CriandoVariaveis.exe
-C:\Users\Lucris\Documents\repositorios\Alura\Formação C# e orientação a objetos\c# parte 1\AprendendoCSharp\2-CriandoVariaveis\obj\Debug\2-CriandoVariaveis.pdb
