@@ -9,7 +9,7 @@ class Formulario extends React.Component<{
 }> {
   state = {
     tarefa: "",
-    tempo: "01:00",
+    tempo: "00:00",
   };
 
   adicionarTarefa(e: React.FormEvent<HTMLFormElement>) {
