@@ -12,12 +12,28 @@ export const authService = {
         "Content-Type": "application/json",
       },
       body: { username, password },
-    }).then(async (serverResponse) => {
-      if (!serverResponse.ok) throw new Error("Usuário ou senha inválidos ...");
-      const body = serverResponse.body;
+    })
+      .then(async (serverResponse) => {
+        if (!serverResponse.ok)
+          throw new Error("Usuário ou senha inválidos ...");
+        const body = serverResponse.body;
 
-      tokenService.save(body.data.access_token);
-    });
+        tokenService.save(body.data.access_token);
+
+        return body;
+      })
+      .then(async ({ data }) => {
+        const { refresh_token } = data;
+
+        const response = await HttpClient("/api/refresh", {
+          method: "POST",
+          body: {
+            refresh_token,
+          },
+        });
+
+        console.log(response);
+      });
   },
 
   async getSession(ctx = null) {
