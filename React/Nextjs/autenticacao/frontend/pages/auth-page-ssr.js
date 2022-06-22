@@ -1,5 +1,4 @@
-import nookies from "nookies";
-import { tokenService } from "../src/services/auth/tokenService";
+import { authService } from "../src/services/auth/authService";
 
 function AuthPageSSR(props) {
   return (
@@ -12,13 +11,56 @@ function AuthPageSSR(props) {
 
 export default AuthPageSSR;
 
-export async function getServerSideProps(ctx) {
-  const cookies = nookies.get(ctx);
-  console.log("cookies", cookies);
+// decorator pattern
+function withSession(funcao) {
+  return async (ctx) => {
+    try {
+      const session = await authService.getSession(ctx);
+      const ctx = {
+        session: "sessão demo",
+      };
 
-  return {
-    props: {
-      token: tokenService.get(ctx),
-    },
+      const modifiedCtx = {
+        ...ctx,
+        req: {
+          ...ctx.req,
+          session: "Nome do usuário",
+        },
+      };
+      return funcao(modifiedCtx);
+    } catch (err) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: "/?error=401",
+        },
+      };
+    }
   };
 }
+
+export const getServerSideProps = withSession((ctx) => {
+  return {
+    props: {
+      session: ctx.req.session,
+    },
+  };
+});
+
+// export async function getServerSideProps(ctx) {
+//   try {
+//     const session = await authService.getSession(ctx);
+//     return {
+//       props: {
+//         session,
+//       },
+//     };
+//   } catch (err) {
+//     return {
+//       redirect: {
+//         permanent: false,
+//         destination: "/?error=401",
+//       },
+//     };
+//   }
+// }
