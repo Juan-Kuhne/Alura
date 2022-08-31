@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nova-tranferencia',
+  selector: 'app-nova-tranferencia',
   templateUrl: './nova-tranferencia.component.html',
   styleUrls: ['nova-tranferencia.component.scss'],
 })
