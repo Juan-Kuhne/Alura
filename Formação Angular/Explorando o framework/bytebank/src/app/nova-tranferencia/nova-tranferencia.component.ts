@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './nova-tranferencia.component.html',
   styleUrls: ['nova-tranferencia.component.scss'],
 })
-export class NovaTransferenciaComponent {}
+export class NovaTransferenciaComponent {
+  transferir() {
+    console.log('Solicitada nova tranferência!');
+  }
+}
