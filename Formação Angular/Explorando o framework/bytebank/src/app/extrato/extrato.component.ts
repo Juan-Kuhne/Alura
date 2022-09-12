@@ -18,4 +18,15 @@ export class ExtratoComponent implements OnInit {
       this.transferencias = transferencias;
     });
   }
+
+  excluir(id) {
+    this.service.remover(id).subscribe(() => {
+      this.transferencias.splice(
+        this.transferencias.findIndex(
+          (transferencia) => transferencia.id === id
+        ),
+        1
+      );
+    });
+  }
 }

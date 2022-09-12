@@ -11,6 +11,8 @@
         <td class="tabela__conteudo">{{ transferencia?.data | date:'short' }}</td>
         <td class="tabela__conteudo">{{ transferencia?.valor | currency }}</td>
         <td class="tabela__conteudo">{{ transferencia?.destino }}</td>
+        <td class="tabela__conteudo excluir" data-id="{{ transferencia?.id }}" (click)="excluir(transferencia?.id)">
+          &cross;</td>
       </tr>
     </tbody>
   </table>

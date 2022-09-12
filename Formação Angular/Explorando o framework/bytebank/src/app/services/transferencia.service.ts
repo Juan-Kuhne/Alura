@@ -30,4 +30,8 @@ export class TransferenciaService {
   private hidratar(transferencia) {
     transferencia.data = new Date();
   }
+
+  remover(transferenciaId: number): Observable<unknown> {
+    return this.httpClient.delete(`${this.url}/${transferenciaId}`);
+  }
 }
