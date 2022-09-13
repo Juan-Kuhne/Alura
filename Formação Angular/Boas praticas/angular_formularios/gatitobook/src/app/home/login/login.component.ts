@@ -14,15 +14,26 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // deprecated
+  // login() {
+  //   this.authService.autenticar(this.usuario, this.senha).subscribe(
+  //     () => {
+  //       console.log('Autenticado com sucesso');
+  //     },
+  //     (error) => {
+  //       alert('usuario ou senha inválidos ...');
+  //       console.error(error);
+  //     }
+  //   );
+  // }
   login() {
-    this.authService.autenticar(this.usuario, this.senha).subscribe(
-      () => {
-        console.log('Autenticado com sucesso');
-      },
-      (error) => {
+    this.authService.autenticar(this.usuario, this.senha).subscribe({
+      next: () => console.log('Autenticado com sucesso'),
+      error: (e) => {
         alert('usuario ou senha inválidos ...');
-        console.error(error);
-      }
-    );
+        console.error(e);
+      },
+      // complete: () => console.info('complete'),
+    });
   }
 }
