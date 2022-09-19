@@ -2,6 +2,7 @@ import { NovousuarioService } from './novousuario.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Novousuario } from './novousuario';
+import { minusculoValidator } from './minusculo.validator';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -21,7 +22,7 @@ export class NovoUsuarioComponent implements OnInit {
     this.novoUsuarioForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       fullName: ['', [Validators.required, Validators.minLength(4)]],
-      userName: [''],
+      userName: ['', [minusculoValidator]],
       password: [''],
     });
   }
@@ -29,11 +30,5 @@ export class NovoUsuarioComponent implements OnInit {
   cadastrar() {
     const novoUsuario = this.novoUsuarioForm.getRawValue() as Novousuario;
     console.log(novoUsuario);
-  }
-  estado() {
-    console.log('get email: ');
-    console.log(this.novoUsuarioForm.get('email'));
-    console.log('errors');
-    console.log(this.novoUsuarioForm.get('email')?.errors);
   }
 }
