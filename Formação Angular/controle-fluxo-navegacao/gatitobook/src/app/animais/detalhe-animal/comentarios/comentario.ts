@@ -1,4 +1,3 @@
-import { Comentario } from './comentario';
 import { type } from 'os';
 
 export interface Comentario {
