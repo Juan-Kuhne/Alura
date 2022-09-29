@@ -8,7 +8,7 @@
 
 jogador = {
  sprite = 260,
- x = 120,
+ x = 100,
  y = 68,
  corDeFundo = 2,
  quadroDeAnimacao = 1,
@@ -19,7 +19,9 @@ Constantes = {
  ALTURA_DA_TELA = 138,
  VELOCIDADE_ANIMACAO_JOGADOR = 0.1,
  SPRITE_CHAVE = 364,
- SPRITE_PORTA = 366
+ SPRITE_PORTA = 366,
+ ID_SFX_CHAVE = 0,
+ ID_SFX_PORTA = 1
 }
 objetos = {}
 
@@ -144,6 +146,15 @@ end
 function fazColisaoDoJogadorComAChave(indice)
   jogador.chaves = jogador.chaves + 1
   table.remove(objetos, indice)
+  
+  sfx(Constantes.ID_SFX_CHAVE,
+      "B-5", -- note
+      60,    -- duration: 60==1 segundo
+      0,     -- channel
+      8,     -- volume
+      1      -- speed
+   )
+  
   return false
 end
 
@@ -171,6 +182,15 @@ function fazColisaoDoJogadorComAPorta(indice)
   if jogador.chaves > 0 then
     jogador.chaves = jogador.chaves - 1
     table.remove(objetos, indice)
+    
+    sfx(Constantes.ID_SFX_PORTA,
+        "B-3", -- note
+        60,    -- duration
+        0,     -- channel
+        8,     -- volume
+        2      -- speed
+    )
+    
     return false
   end
   return true
@@ -192,7 +212,6 @@ end
 function TIC()
  atualiza()
  desenha()
- print(jogador.chaves)
 end
 
 function criaPorta(coluna, linha)
@@ -219,7 +238,7 @@ function inicializa()
   chave = criaChave(3,3)
   table.insert(objetos, chave)
   
-  porta = criaPorta(17,8)
+  porta = criaPorta(16,8)
   table.insert(objetos, porta)
 end
 
