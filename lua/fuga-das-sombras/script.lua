@@ -14,7 +14,8 @@ Constantes = {
  SPRITE_PORTA = 366,
  SPRITE_INIMIGO = 292,
  ID_SFX_CHAVE = 0,
- ID_SFX_PORTA = 1
+ ID_SFX_PORTA = 1,
+ INIMIGO = "inimigo"
 }
 objetos = {}
 
@@ -67,6 +68,26 @@ function tentaMoverPara(delta)
   end
 end
 
+function atualizaInimigo(inimigo)
+  if jogador.y > inimigo.y then
+    inimigo.y = inimigo.y + 1
+  elseif jogador.y < inimigo.y then
+    inimigo.y = inimigo.y - 1
+  end
+  
+  local animacaoInimigo = {
+    Constantes.SPRITE_INIMIGO,294
+  }
+  
+  inimigo.quadroDeAnimacao = inimigo.quadroDeAnimacao + Constantes.VELOCIDADE_ANIMACAO_JOGADOR
+  if inimigo.quadroDeAnimacao >= 3 then
+   inimigo.quadroDeAnimacao = 1
+  end
+  
+  local quadro = math.floor(inimigo.quadroDeAnimacao)
+  inimigo.sprite = animacaoInimigo[quadro]
+end
+
 function atualiza()
  local animacaoJogador = {
   {256, 258},
@@ -83,10 +104,16 @@ function atualiza()
  
  for tecla = 0,3 do
    if btn(tecla) then
-     quadros = animacaoJogador[tecla+1]
-     quadro = math.floor(jogador.quadroDeAnimacao)
+     local quadros = animacaoJogador[tecla+1]
+     local quadro = math.floor(jogador.quadroDeAnimacao)
      jogador.sprite = quadros[quadro]
      tentaMoverPara(Direcao[tecla+1])
+   end
+ end
+ 
+ for indice, objeto in pairs(objetos) do
+   if objeto.tipo == Constantes.INIMIGO then
+     atualizaInimigo(objeto)
    end
  end
 end
@@ -233,10 +260,12 @@ end
 
 function criaInimigo(coluna, linha)
   local inimigo = {
+    tipo = "inimigo",
     sprite = Constantes.SPRITE_INIMIGO,
     x = coluna * 8 + 8,
     y = linha * 8 + 8,
     corDeFundo = 4,
+    quadroDeAnimacao = 1,
     funcaoDeColisao = fazColisaoDoJogadorComOInimigo
   }
   return inimigo
