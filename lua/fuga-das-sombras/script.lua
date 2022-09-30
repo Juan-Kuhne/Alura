@@ -197,15 +197,9 @@ end
 
 function verificaColisaoComObjetos(novaPosicao)
  for indice, objeto in pairs(objetos) do
-  if temColisao(novaPosicao, objeto) then
-    if objeto.sprite == Constantes.SPRITE_CHAVE then
-      return fazColisaoDoJogadorComAChave(indice)
-    elseif objeto.sprite == Constantes.SPRITE_PORTA then
-      return fazColisaoDoJogadorComAPorta(indice)
-    elseif objeto.sprite == Constantes.SPRITE_INIMIGO then
-      return fazColisaoDoJogadorComOInimigo(indice)
-    end
-  end
+	  if temColisao(novaPosicao, objeto) then
+	    return objeto.funcaoDeColisao(indice)
+	  end
  end
  return false
 end
@@ -220,7 +214,8 @@ function criaPorta(coluna, linha)
     sprite = Constantes.SPRITE_PORTA,
     x = coluna * 8 + 8,
     y = linha * 8 + 8,
-    corDeFundo = 2
+    corDeFundo = 2,
+    funcaoDeColisao = fazColisaoDoJogadorComAPorta
   }
   return porta
 end
@@ -231,6 +226,7 @@ function criaChave(coluna, linha)
     x = coluna* 8 + 8,
     y = linha* 8 + 8,
     corDeFundo = 2,
+    funcaoDeColisao = fazColisaoDoJogadorComAChave
   }
   return chave
 end
@@ -240,7 +236,8 @@ function criaInimigo(coluna, linha)
     sprite = Constantes.SPRITE_INIMIGO,
     x = coluna * 8 + 8,
     y = linha * 8 + 8,
-    corDeFundo = 4
+    corDeFundo = 4,
+    funcaoDeColisao = fazColisaoDoJogadorComOInimigo
   }
   return inimigo
 end
