@@ -15,7 +15,8 @@ Constantes = {
   SPRITE_INIMIGO = 292,
   ID_SFX_CHAVE = 0,
   ID_SFX_PORTA = 1,
-  INIMIGO = "inimigo",
+  JOGADOR = "JOGADOR",
+  INIMIGO = "INIMIGO",
   Direcao = {
     CIMA = 1,
     BAIXO = 2,
@@ -81,10 +82,10 @@ Constantes = {
    }
  
    if jogador.y > inimigo.y then
-     delta.deltaY = 1
+     delta.deltaY = 0.5
      inimigo.direcao = Constantes.Direcao.BAIXO
    elseif jogador.y < inimigo.y then
-     delta.deltaY = -1
+     delta.deltaY = -0.5
      inimigo.direcao = Constantes.Direcao.CIMA
    end
    tentaMoverPara(inimigo, delta)
@@ -94,10 +95,10 @@ Constantes = {
      deltaY = 0
    }
    if jogador.x > inimigo.x then
-     delta.deltaX = 1
+     delta.deltaX = 0.5
      inimigo.direcao = Constantes.Direcao.DIREITA
    elseif jogador.x < inimigo.x then
-     delta.deltaX = -1
+     delta.deltaX = -0.5
      inimigo.direcao = Constantes.Direcao.ESQUERDA
    end
    tentaMoverPara(inimigo, delta)
@@ -136,6 +137,8 @@ Constantes = {
       tentaMoverPara(jogador, Direcao[tecla+1])
     end
   end
+  
+  verificaColisaoComObjetos(jogador, { x=jogador.x,y=jogador.y })
   
   for indice, objeto in pairs(objetos) do
     if objeto.tipo == Constantes.INIMIGO then
@@ -249,13 +252,11 @@ Constantes = {
  end
  
  function verificaColisaoComObjetos(personagem, novaPosicao)
-   if personagem.tipo == Constantes.INIMIGO then
-     return false
-   end
  
   for indice, objeto in pairs(objetos) do
+    local funcaoDeColisao = objeto.colisoes[personagem.tipo]
      if temColisao(novaPosicao, objeto) then
-       return objeto.funcaoDeColisao(indice)
+       return funcaoDeColisao(indice)
      end
   end
   return false
@@ -266,15 +267,26 @@ Constantes = {
   desenha()
  end
  
+ function fazColisaoDoInimigoComAPorta(indice)
+   return true
+ end
+ 
  function criaPorta(coluna, linha)
    local porta = {
      sprite = Constantes.SPRITE_PORTA,
      x = coluna * 8 + 8,
      y = linha * 8 + 8,
      corDeFundo = 2,
-     funcaoDeColisao = fazColisaoDoJogadorComAPorta
+     colisoes = {
+       INIMIGO = fazColisaoDoInimigoComAPorta,
+       JOGADOR = fazColisaoDoJogadorComAPorta
+     }
    }
    return porta
+ end
+ 
+ function deixaPassar(indice)
+   return false
  end
  
  function criaChave(coluna, linha)
@@ -283,20 +295,26 @@ Constantes = {
      x = coluna* 8 + 8,
      y = linha* 8 + 8,
      corDeFundo = 2,
-     funcaoDeColisao = fazColisaoDoJogadorComAChave
+     colisoes = {
+       INIMIGO = deixaPassar,
+       JOGADOR = fazColisaoDoJogadorComAChave
+     }
    }
    return chave
  end
  
  function criaInimigo(coluna, linha)
    local inimigo = {
-     tipo = "inimigo",
+     tipo = Constantes.INIMIGO,
      sprite = Constantes.SPRITE_INIMIGO,
      x = coluna * 8 + 8,
      y = linha * 8 + 8,
      corDeFundo = 4,
      quadroDeAnimacao = 1,
-     funcaoDeColisao = fazColisaoDoJogadorComOInimigo
+     colisoes = {
+       INIMIGO = deixaPassar,
+       JOGADOR = fazColisaoDoJogadorComOInimigo
+     }
    }
    return inimigo
  end
@@ -313,7 +331,8 @@ Constantes = {
    local inimigo = criaInimigo(25,12)
    table.insert(objetos, inimigo)
    
-   jogador = {      --variavel precisa ser global
+   jogador = {    --variavel precisa ser global
+     tipo = Constantes.JOGADOR,
         sprite = 260,
         x = 100,
         y = 68,
