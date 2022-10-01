@@ -9,14 +9,27 @@
 Constantes = {
   LARGURA_DA_TELA = 240,
   ALTURA_DA_TELA = 138,
+  
   VELOCIDADE_ANIMACAO_JOGADOR = 0.1,
+  
   SPRITE_CHAVE = 364,
   SPRITE_PORTA = 366,
   SPRITE_INIMIGO = 292,
+  
+  SPRITE_TITULO = 352,
+  SPRITE_TITULO_LARGURA = 11,
+  SPRITE_TITULO_ALTURA = 4,
+  SPRITE_ALURA = 416,
+  SPRITE_ALURA_LARGURA = 7,
+  SPRITE_ALURA_ALTURA = 3,
+  
   ID_SFX_CHAVE = 0,
   ID_SFX_PORTA = 1,
+  ID_SFX_INICIO = 2,
+  
   JOGADOR = "JOGADOR",
   INIMIGO = "INIMIGO",
+  
   Direcao = {
     CIMA = 1,
     BAIXO = 2,
@@ -115,7 +128,7 @@ Constantes = {
    inimigo.sprite = quadros[quadro]
  end
  
- function atualiza()
+ function atualizaJogo()
   local animacaoJogador = {
    {256, 258},
    {260, 262},
@@ -185,7 +198,7 @@ Constantes = {
    end
  end
  
- function desenha()
+ function desenhaJogo()
    cls()
   desenhaMapa()
    desenhaJogador()
@@ -262,9 +275,49 @@ Constantes = {
   return false
  end
  
+ function desenhaTelaDeTitulo()
+   cls()
+  spr(
+    Constantes.SPRITE_TITULO,
+    80,
+    10,
+    15,
+    1,
+    0,
+    0,
+    Constantes.SPRITE_TITULO_LARGURA,
+    Constantes.SPRITE_TITULO_ALTURA
+  )
+  spr(
+    Constantes.SPRITE_ALURA,
+    94,
+    92,
+    15,
+    1,
+    0,
+    0,
+    Constantes.SPRITE_ALURA_LARGURA,
+    Constantes.SPRITE_ALURA_ALTURA
+  )
+  print("www.alura.com.br", 78,122,12)
+ end
+ 
+ function atualizaTelaDeTitulo()
+   if btn(4) then
+     sfx(Constantes.ID_SFX_INICIO,
+       "B-8", -- note
+       60,    -- duration: 60==1 segundo
+       0,     -- channel
+       8,     -- volume
+       0      -- speed
+     )
+     tela = Tela.JOGO
+   end
+ end
+ 
  function TIC()
-  atualiza()
-  desenha()
+   tela.atualiza()
+   tela.desenha()
  end
  
  function fazColisaoDoInimigoComAPorta(indice)
@@ -319,6 +372,18 @@ Constantes = {
    return inimigo
  end
  
+ 
+ Tela = {
+   INICIO = {
+     atualiza = atualizaTelaDeTitulo,
+     desenha = desenhaTelaDeTitulo 
+   },
+   JOGO = {
+     atualiza = atualizaJogo,
+     desenha = desenhaJogo
+   }
+ }
+ 
  function inicializa()
    objetos = {}
  
@@ -340,6 +405,7 @@ Constantes = {
         quadroDeAnimacao = 1,
         chaves = 0
      }
+     tela = Tela.INICIO
  end
  
  inicializa()
