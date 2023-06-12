@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Header from './componentes/Header';
+import Pesquisa from './componentes/Pesquisa';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -12,7 +13,8 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
-        <Header/>
+        <Header />
+        <Pesquisa />
       </AppContainer>
     );
   }
