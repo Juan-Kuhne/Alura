@@ -1,14 +1,23 @@
-import React, { Component } from 'react';
-import logo from '../../imagens/logo.svg';
-import './estilo.css'
+import React, { Component } from 'react'
+import logo from '../../imagens/logo.svg'
+import styled from 'styled-components'
+
+const LogoContainer = styled.div`
+   display: flex;
+   font-size: 30px;
+`
+
+const LogoImg = styled.img`
+   margin-right: 10px;
+`
 
 class Logo extends Component {
    render() {
       return(
-         <div className='logo'>
-            <img src={logo} alt='logo' className='logo-img'></img>
+         <LogoContainer>
+            <LogoImg src={logo} alt='logo'/>
             <p><strong>Alura</strong>Books</p>
-         </div>
+         </LogoContainer>
       )
    }
 }
