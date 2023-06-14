@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Input from "../Input";
 import styled from "styled-components";
 
@@ -24,18 +24,21 @@ const Subtitulo = styled.h3`
    margin-bottom: 40px;
 `
 
-class Pesquisa extends Component {
-   render() {
-      return (
-         <PesquisaContainer>
-            <Titulo>Já sabe por onde começar?</Titulo>
-            <Subtitulo>Encontre seu livro em nossa estante.</Subtitulo>
-            <Input
-               placeholder="Escreva sua próxima leitura"
-            />
-         </PesquisaContainer>
-      )
-   }
+function Pesquisa() {
+   const [textoDigitato, setTextoDigitado] = useState('')
+
+   return (
+      <PesquisaContainer>
+         <Titulo>Já sabe por onde começar?</Titulo>
+         <Subtitulo>Encontre seu livro em nossa estante.</Subtitulo>
+         <Input
+            placeholder="Escreva sua próxima leitura"
+            onBlur={(e) => setTextoDigitado(e.target.value)}
+         />
+         <p>{textoDigitato}</p>
+      </PesquisaContainer>
+   )
+
 }
 
 export default Pesquisa
