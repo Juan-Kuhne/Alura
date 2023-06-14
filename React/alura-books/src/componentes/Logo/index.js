@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import logo from '../../imagens/logo.svg'
 import styled from 'styled-components'
 
