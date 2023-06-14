@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 
 const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE'];
@@ -19,16 +19,14 @@ const Opcao = styled.li`
    cursor: pointer;
 `
 
-class OpcoesHeader extends Component {
-   render() {
-      return (
-         <Opcoes>
-            { textoOpcoes.map((opcao) => (
-              <Opcao><p>{opcao}</p></Opcao>
-            )) }
-          </Opcoes>
-      )
-   }
+function OpcoesHeader() {
+   return (
+      <Opcoes>
+         { textoOpcoes.map((opcao) => (
+            <Opcao><p>{opcao}</p></Opcao>
+         )) }
+         </Opcoes>
+   )
 }
 
 export default OpcoesHeader;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import perfil from '../../imagens/perfil.svg';
 import sacola from '../../imagens/sacola.svg';
 import styled from 'styled-components';
@@ -15,16 +15,14 @@ const Icone = styled.li`
    width: 25px;
 `
 
-class IconesHeader extends Component {
-   render() {
-      return(
-         <Icones>
-            { icones.map((icone) => (
-              <Icone><img src={icone} alt='icone'></img></Icone>
-            )) }
-          </Icones>
-      )
-   }
+function IconesHeader() {
+   return(
+      <Icones>
+         { icones.map((icone) => (
+            <Icone><img src={icone} alt='icone'></img></Icone>
+         )) }
+         </Icones>
+   )
 }
 
 export default IconesHeader;

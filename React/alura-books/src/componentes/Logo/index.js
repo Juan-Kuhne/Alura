@@ -11,15 +11,13 @@ const LogoImg = styled.img`
    margin-right: 10px;
 `
 
-class Logo extends Component {
-   render() {
-      return(
-         <LogoContainer>
-            <LogoImg src={logo} alt='logo'/>
-            <p><strong>Alura</strong>Books</p>
-         </LogoContainer>
-      )
-   }
+function Logo() {
+   return(
+      <LogoContainer>
+         <LogoImg src={logo} alt='logo'/>
+         <p><strong>Alura</strong>Books</p>
+      </LogoContainer>
+   )
 }
 
 export default Logo;
