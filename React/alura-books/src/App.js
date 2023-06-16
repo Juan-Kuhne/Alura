@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Header from './componentes/Header';
 import Pesquisa from './componentes/Pesquisa';
+import UltimosLancamentos from './componentes/UltimosLancamentos';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -16,6 +17,7 @@ class App extends Component {
       <AppContainer>
         <Header />
         <Pesquisa />
+        <UltimosLancamentos />
       </AppContainer>
     );
   }
