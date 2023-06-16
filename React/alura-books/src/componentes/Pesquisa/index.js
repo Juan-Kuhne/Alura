@@ -25,10 +25,29 @@ const Subtitulo = styled.h3`
    margin-bottom: 40px;
 `
 
+const ResultadoPesquisaContainer = styled.div`
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 3rem;
+   margin-top: 3rem;
+   padding: 1rem 0;
+   flex-wrap: wrap;
+`
+
+const ItemPesquisa = styled.div`
+   border-radius: 8px;
+   padding: 0 8px;
+   transition: all .5s ease;
+
+   &:hover {
+      box-shadow: 0 0 0 1px #fff;
+      transform: scale(1.05);
+   }
+`
+
 function Pesquisa() {
    const [livrosPesquisados, setLivrosPesquisados] = useState([])
-
-   console.log(livrosPesquisados);
 
    return (
       <PesquisaContainer>
@@ -42,7 +61,14 @@ function Pesquisa() {
                setLivrosPesquisados(resultadoPesquisa)
             }}
          />
-         {/* <p>{livrosPesquisados}</p> */}
+         <ResultadoPesquisaContainer>
+            {livrosPesquisados.map(livro => (
+               <ItemPesquisa>
+                  <p>{livro.nome}</p>
+                  <img src={livro.src} />
+               </ItemPesquisa>
+            ))}
+         </ResultadoPesquisaContainer>
       </PesquisaContainer>
    )
 
