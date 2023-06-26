@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Header from './componentes/Header';
-import Pesquisa from './componentes/Pesquisa';
-import UltimosLancamentos from './componentes/UltimosLancamentos';
+import Header from '../componentes/Header';
+import Pesquisa from '../componentes/Pesquisa';
+import UltimosLancamentos from '../componentes/UltimosLancamentos';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -11,11 +11,10 @@ const AppContainer = styled.div`
   overflow-x: hidden;
 `
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
       <AppContainer>
-        <Header />
         <Pesquisa />
         <UltimosLancamentos />
       </AppContainer>
@@ -23,4 +22,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
