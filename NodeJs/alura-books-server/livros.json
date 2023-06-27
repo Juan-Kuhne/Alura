@@ -1,34 +1,42 @@
 [
    {
       "id": "4",
-      "nome": "Entendendo algoritmos"
+      "nome": "Entendendo algoritmos",
+      "src": "https://www.thiengo.com.br/img/post/normal/79q3is1ln5lob2qc9kpfust0f29699a929e44163386abf4dde0258653d.jpg"
    },
    {
       "id": "5",
-      "nome": "Cangaceiro Javascript"
+      "nome": "Cangaceiro Javascript",
+      "src": "https://m.media-amazon.com/images/I/41K9k+ceTRL._AC_UF1000,1000_QL80_.jpg"
    },
    {
       "id": "7",
-      "nome": "Guia básico de C#"
+      "nome": "Guia básico de C#",
+      "src": "https://m.media-amazon.com/images/I/61f0s4SqISS._AC_UF1000,1000_QL80_.jpg"
    },
    {
       "id": "8",
-      "nome": "Guia básico de JavaScript"
+      "nome": "Guia básico de JavaScript",
+      "src": "https://m.media-amazon.com/images/I/91z1xY4ppaL._AC_UF350,350_QL50_.jpg"
    },
    {
       "id": "9",
-      "nome": "Código Limpo"
+      "nome": "Código Limpo",
+      "src": "https://m.media-amazon.com/images/I/41IRFCLk-kL.jpg"
    },
    {
       "id": "10",
-      "nome": "JavaScript para iniciantes"
+      "nome": "JavaScript para iniciantes",
+      "src": "https://images-na.ssl-images-amazon.com/images/I/41i8kjlz1SL.jpg"
    },
    {
       "id": "11",
-      "nome": "Conhecendo o python"
+      "nome": "Conhecendo o python",
+      "src": "https://m.media-amazon.com/images/I/416xyF-K5kL.jpg"
    },
    {
       "id": "12",
-      "nome": "Imersão Alura"
+      "nome": "Imersão Alura",
+      "src": "https://www.alura.com.br/assets/img/imersoes/imersao-java/ilustracao-imersao-java.1686744882.png"
    }
 ]

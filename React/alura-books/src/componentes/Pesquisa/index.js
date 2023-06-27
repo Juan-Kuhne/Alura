@@ -44,6 +44,10 @@ const ItemPesquisa = styled.div`
       box-shadow: 0 0 0 1px #fff;
       transform: scale(1.05);
    }
+
+   img {
+      max-width: 209px;
+   }
 `
 
 function Pesquisa() {
