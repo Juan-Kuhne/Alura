@@ -7,6 +7,7 @@ const AppContainer = styled.div`
   min-height: 100vh;
   background-image: linear-gradient(90deg, #002F52 35%, #326589);
   overflow-x: hidden;
+  padding: .5rem 0;
 `
 
 const FavoritosContainer = styled.div`
@@ -20,20 +21,21 @@ const FavoritosContainer = styled.div`
 `
 
 const Favorito = styled.div`
-   border-radius: 8px;
-   padding: 0 8px;
-   transition: all .5s ease;
+  position: relative;
+  border-radius: 8px;
+  padding: 3px 10px;
+  box-shadow: 0 0 0 2px transparent;
+  transition: all .5s ease;
 
-   &:hover {
-      box-shadow: 0 0 0 1px #fff;
-      transform: scale(1.05);
-   }
+  &:hover {
+    box-shadow: 0 0 0 2px #fff;
+  }
 
-   img {
-      max-width: 209px;
-   }
+  img {
+    max-width: 209px;
+  }
 
-   p { color: #FFF }
+  p { color: #FFF }
 `
 
 function Favoritos() {
@@ -58,7 +60,11 @@ function Favoritos() {
     <AppContainer>
       <FavoritosContainer>
         {favoritos.map(favorito => (
-          <Favorito onClick={() => deletarFavorito(favorito.id)}>
+          <Favorito>
+            <i 
+              class="fi fi-sr-star c-yellow favIcon"
+              onClick={() => deletarFavorito(favorito.id)}
+            ></i>
             <p>{favorito.nome}</p>
             <img src={favorito.src} alt={favorito.nome} />
         </Favorito>

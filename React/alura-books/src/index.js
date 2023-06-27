@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
+import '@flaticon/flaticon-uicons/css/all/all.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './componentes/Header';
 import Home from './rotas/Home';
@@ -15,6 +16,21 @@ const GlobalStyle = createGlobalStyle`
 
   li {
     list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  i.favIcon {
+    position: absolute;
+    right: .2rem;
+    top: .2rem;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .5s;
+
+    &:hover { color: yellow; }
   }
 `
 

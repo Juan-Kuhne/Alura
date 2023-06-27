@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const LogoContainer = styled.div`
    display: flex;
    font-size: 30px;
+   color: #000;
 `
 
 const LogoImg = styled.img`

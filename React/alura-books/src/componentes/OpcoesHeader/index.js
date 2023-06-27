@@ -6,6 +6,7 @@ const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE'];
 
 const Opcoes = styled.ul`
    display: flex;
+   gap: 3px;
 `
 
 const Opcao = styled.li`
@@ -18,6 +19,12 @@ const Opcao = styled.li`
    height: 100%;
    padding: 0 5px;
    cursor: pointer;
+   border: 3px solid transparent;
+   border-radius: 6px;
+   color: #002F52;
+   transition: border-color .3s;
+
+   &:hover { border-color: #002F52; }
 `
 
 function OpcoesHeader() {
