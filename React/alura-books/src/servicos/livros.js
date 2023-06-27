@@ -3,9 +3,14 @@ import axios from "axios"
 const livrosAPI = axios.create({baseURL: 'http://localhost:8000/livros'})
 
 async function getLivros() {
-   const response = livrosAPI.get('/')
+   try {
+      const response = await livrosAPI.get('/')
+      console.log(response);
 
-   return response.data
+      return response.data
+   } catch(err) {
+      console.log(err);
+   }
 }
 
 export {

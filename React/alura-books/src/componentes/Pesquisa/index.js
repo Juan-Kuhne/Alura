@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Input from "../Input";
 import styled from "styled-components";
-import { livros } from "./dadosPesquisa";
 import { getLivros } from "../../servicos/livros";
 
 const PesquisaContainer = styled.section`
@@ -52,9 +51,13 @@ function Pesquisa() {
    const [ livros, setLivros ] = useState([])
    
    useEffect(() => {
-      const livrosDaAPI = getLivros()
-      setLivros(livrosDaAPI)
+      fetchLivros()
    }, [])
+
+   async function fetchLivros() {
+      const livrosDaAPI = await getLivros()
+      setLivros(livrosDaAPI)
+   }
 
    return (
       <PesquisaContainer>
